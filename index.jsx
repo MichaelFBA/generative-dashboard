@@ -19,7 +19,7 @@ async function handler(req) {
   // Check if the request is for style.css.
   if (pathname.endsWith(".css")) {
     // Read the style.css file from the file system.
-    const file = await Deno.readFile(`./src${pathname}`);
+    const file = await Deno.readFile(`src${pathname}`);
     // Respond to the request with the style.css file.
     return new Response(file, {
       headers: {

@@ -6,7 +6,7 @@
 
 import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import { h, renderSSR } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
-import { IndexPage } from './src/pages/index.jsx'
+import { IndexPage } from './public/pages/index.jsx'
 
 async function handler(req) {
   const { pathname } = new URL(req.url);
@@ -19,7 +19,8 @@ async function handler(req) {
   // Check if the request is for style.css.
   if (pathname.endsWith(".css")) {
     // Read the style.css file from the file system.
-    const file = await Deno.readFile(`.${pathname}`);
+      const file = await Deno.readFile(`${Deno.cwd()}${pathname}`);
+      console.log(Deno.cwd())
     // Respond to the request with the style.css file.
     return new Response(file, {
       headers: {
@@ -30,7 +31,7 @@ async function handler(req) {
 
   if (pathname.endsWith(".js")) {
     // Read the style.css file from the file system.
-    const file = await Deno.readFile(`.${pathname}`);
+    const file = await Deno.readFile(`${Deno.cwd()}${pathname}`);
     // Respond to the request with the style.css file.
     return new Response(file, {
       headers: {

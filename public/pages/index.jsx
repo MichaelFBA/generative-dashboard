@@ -11,11 +11,11 @@ export function IndexPage() {
     <html>
       <head>
         <title>Generative Dashboard</title>
-        <link rel="stylesheet" href="src/styles/index.css"/>
+        <link rel="stylesheet" href="public/styles/index.css"/>
       </head>
       <body>
         <section id="imgGrid"></section>
-        <script src="src/scripts/index.js"></script>
+        <script src="public/scripts/index.js"></script>
       </body>
     </html>
   );

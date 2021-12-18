@@ -14,7 +14,7 @@ function App() {
         <title>Hello from JSX</title>
       </head>
       <body>
-        <h1>Hello world</h1>
+        <h1>Hello Mike render </h1>
       </body>
     </html>
   );
